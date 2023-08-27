@@ -8,6 +8,7 @@ namespace YTGrab.Help
     {
 
         private List<ITelegramCommand> commands;
+        private ICommandListener commandListener;   
 
         public CommandExecutor()
         {
@@ -20,15 +21,36 @@ namespace YTGrab.Help
 
         public async Task GetUpdate(Update update)
         {
-            Message msg = update.Message;
-            if (msg.Text == null)
-                return;
+            if (commandListener == null)
+            {
+                await ExecuteCommand(update);
+            }
+            else
+            {
+                await commandListener.GetUpdate(update);
+            }
+        }
 
+        private async Task ExecuteCommand(Update update) 
+        {
+            Message msg = update.Message;
             foreach (var command in commands) 
             {
                 if (command.Name == msg.Text)
+                {
                     await command.Execute(update);
+                }
             }
+        }
+
+        public void StartListen(ICommandListener newListener)
+        {
+            commandListener = newListener;  
+        }
+
+        public void StopListen()
+        {
+            commandListener = null;
         }
     }
 }
