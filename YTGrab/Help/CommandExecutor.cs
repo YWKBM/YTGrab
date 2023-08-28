@@ -15,6 +15,7 @@ namespace YTGrab.Help
             commands = new List<ITelegramCommand>
             {
                 new StartCommand(),
+                new VideoCommand(this)
             };
         }
 
