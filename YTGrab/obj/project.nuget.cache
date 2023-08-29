@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "WHBr/iMfLLzAQ+x2I/HDHnNfEOV8JE9oHZPsIUwkG1kpL/Cw7vMDtGSfmQiPVOCeJ0MbiJ5ENHO/lzTfvbRA5g==",
+  "dgSpecHash": "0Z6QiV3WuhcIxUh4GV1ji2EOzZgNnz4naK2z7qOFV2sWx7NlKlljZZ9wim1VgZ4vyb6TLaBk5nKDCK3d06KBjA==",
   "success": true,
   "projectFilePath": "C:\\Users\\ywkbm\\source\\repos\\YTGrab\\YTGrab\\YTGrab.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ywkbm\\.nuget\\packages\\mediafileprocessor\\1.0.2\\mediafileprocessor.1.0.2.nupkg.sha512",
     "C:\\Users\\ywkbm\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.20\\microsoft.aspnetcore.jsonpatch.6.0.20.nupkg.sha512",
     "C:\\Users\\ywkbm\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\6.0.20\\microsoft.aspnetcore.mvc.newtonsoftjson.6.0.20.nupkg.sha512",
     "C:\\Users\\ywkbm\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

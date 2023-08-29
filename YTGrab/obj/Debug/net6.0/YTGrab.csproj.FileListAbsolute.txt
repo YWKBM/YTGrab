@@ -31,3 +31,4 @@ C:\Users\ywkbm\source\repos\YTGrab\YTGrab\obj\Debug\net6.0\YTGrab.pdb
 C:\Users\ywkbm\source\repos\YTGrab\YTGrab\obj\Debug\net6.0\YTGrab.genruntimeconfig.cache
 C:\Users\ywkbm\source\repos\YTGrab\YTGrab\obj\Debug\net6.0\ref\YTGrab.dll
 C:\Users\ywkbm\source\repos\YTGrab\YTGrab\bin\Debug\net6.0\libvideo.dll
+C:\Users\ywkbm\source\repos\YTGrab\YTGrab\bin\Debug\net6.0\MediaFileProcessor.dll
