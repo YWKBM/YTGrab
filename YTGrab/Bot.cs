@@ -13,27 +13,9 @@ namespace YTGrab
 
         public static UpdateDistributor<CommandExecutor> updateDistributor = new UpdateDistributor<CommandExecutor>();
 
-        private static string webHookUrl;
         private static string botToken;
         private static TelegramBotClient client;
 
-
-        private static async void ConfigureWebHook()
-        {
-
-            var request = (HttpWebRequest)WebRequest.Create($"https://api.telegram.org/bot{botToken}/setWebhook?url={webHookUrl}");
-            request.Method = "POST";
-            request.ContentType = "application/json";
-
-            var resposne = (HttpWebResponse)request.GetResponse();
-
-            using (StreamReader reader = new StreamReader(resposne.GetResponseStream()))
-            {
-               var resposneString = reader.ReadToEnd();
-               Console.WriteLine(resposneString);
-
-            };
-        }
 
         public static TelegramBotClient GetTelegramBot()
         {
@@ -47,12 +29,8 @@ namespace YTGrab
 
         public static void Start()
         {
-            webHookUrl = Configuration.GetValue<string>("BotConfiguration:webHookURL");
             botToken = Configuration.GetValue<string>("BotConfiguration:botToken");
-
             client = new TelegramBotClient(botToken);
-
-            ConfigureWebHook();
         }
     }
 }
