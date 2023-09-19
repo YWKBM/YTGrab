@@ -5,6 +5,8 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
+RUN apt update && apt install -y ffmpeg && apt-get clean && apt-get clean && rm -rf /var/lib/apt/lists/*
+
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["YTGrab/YTGrab.csproj", "YTGrab/"]

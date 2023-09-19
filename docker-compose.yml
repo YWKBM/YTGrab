@@ -1,0 +1,33 @@
+version: "3.9"
+networks:
+  YTGrab:
+    driver: bridge
+services:
+  app:
+    container_name: YTGrab
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    networks:
+      - YTGrab
+    depends_on:
+      - ngrok
+
+
+  ngrok:
+    container_name: ngrok
+    image: ngrok/ngrok:latest
+    command:
+      - "start"
+      - "--all"
+      - "--config"
+      - "/etc/ngrok.yml"
+    volumes:
+      - ./ngrok.yml:/etc/ngrok.yml
+    ports:
+      - 4040:4040
+    networks:
+      - YTGrab
+
