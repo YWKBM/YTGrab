@@ -1,5 +1,5 @@
 version: "2"
-authtoken: 2OlNvYjHivtQ1te9P7dpc0NLI44_5uyMXnfBhNYLShu2wcmKu
+authtoken: {your_authtoken}
 tunnels:
   YTGrab:
     addr: 80
