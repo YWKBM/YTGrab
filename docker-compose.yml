@@ -26,8 +26,5 @@ services:
       - "/etc/ngrok.yml"
     volumes:
       - ./ngrok.yml:/etc/ngrok.yml
-    ports:
-      - 4040:4040
-    networks:
-      - YTGrab
+    network_mode: "host"
 

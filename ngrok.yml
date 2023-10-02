@@ -1,0 +1,6 @@
+version: "2"
+authtoken: 2OlNvYjHivtQ1te9P7dpc0NLI44_5uyMXnfBhNYLShu2wcmKu
+tunnels:
+  YTGrab:
+    addr: 80
+    proto: http
