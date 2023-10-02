@@ -1,0 +1,6 @@
+version: "2"
+authtoken: {your_authtoken}
+tunnels:
+  YTGrab:
+    addr: 80
+    proto: http
