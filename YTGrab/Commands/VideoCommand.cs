@@ -26,7 +26,7 @@ namespace YTGrab.Commands
             Executor.StartListen(this);
 
             var chatId = update.Message.Chat.Id;
-            string message = "\"🎥 Please send me the link to the YouTube video you want to download. Just paste it here!\"";
+            string message = "🎥 Please send me the link to the YouTube video you want to download. Just paste it here!";
 
             await Client.SendTextMessageAsync(chatId, message);
         }
