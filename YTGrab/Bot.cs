@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Formatters;
+﻿using App.Metrics;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using System.Net;
 using System.Runtime.CompilerServices;
 using Telegram.Bot;
@@ -15,6 +16,7 @@ namespace YTGrab
 
         private static string botToken;
         private static TelegramBotClient client;
+        public static IMetrics metrics;
 
 
         public static TelegramBotClient GetTelegramBot()

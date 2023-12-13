@@ -1,4 +1,5 @@
 
+using App.Metrics;
 using App.Metrics.Formatters.Prometheus;
 using Telegram.Bot.Types;
 using YTGrab;
@@ -22,6 +23,7 @@ builder.Host
 var app  = builder.Build();
 
 Bot.Configuration = app.Services.GetRequiredService<IConfiguration>();
+Bot.metrics = app.Services.GetRequiredService<IMetrics>();
 Bot.Start();
 
 app.UseHttpsRedirection();

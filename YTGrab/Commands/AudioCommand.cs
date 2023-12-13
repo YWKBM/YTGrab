@@ -1,9 +1,11 @@
-﻿using System.IO;
+﻿using App.Metrics;
+using System.IO;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 using VideoLibrary;
 using YTGrab.Help;
 using YTGrab.Interfaces;
+using YTGrab.Metrics;
 using YTGrab.Utils;
 
 namespace YTGrab.Commands
@@ -16,6 +18,8 @@ namespace YTGrab.Commands
 
         public CommandExecutor Executor { get; set; }
 
+        private readonly IMetrics _metrics;
+
         public AudioCommand(CommandExecutor executor)
         {
             Executor = executor;
@@ -26,7 +30,8 @@ namespace YTGrab.Commands
             Executor.StartListen(this);
             var chatId = update.Message.Chat.Id;
             string message = "🎥 Please send me the link to the YouTube video you want to extract audio from. Just paste it here!";
-            await Client.SendTextMessageAsync(chatId, message); 
+            await Client.SendTextMessageAsync(chatId, message);
+            Bot.metrics.Measure.Counter.Increment(TgBotMetrics.RequestAudioCounter);
         }
 
         public async Task GetUpdate(Update update)
