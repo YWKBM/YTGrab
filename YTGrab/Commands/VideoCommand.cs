@@ -57,6 +57,7 @@ namespace YTGrab.Commands
             finally
             {
                 //TODO: реализовать другую очистку памяти
+                Bot.metrics.Measure.Counter.Decrement(TgBotMetrics.RequestVideoCounter);
                 GC.Collect();
             }
         }

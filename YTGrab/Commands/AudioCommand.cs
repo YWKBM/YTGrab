@@ -62,6 +62,7 @@ namespace YTGrab.Commands
             }
             finally
             {
+                Bot.metrics.Measure.Counter.Decrement(TgBotMetrics.RequestAudioCounter);
                 GC.Collect();   
             }
         }
