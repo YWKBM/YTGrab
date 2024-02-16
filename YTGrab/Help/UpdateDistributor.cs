@@ -14,18 +14,21 @@ namespace YTGrab.Help
 
         public async Task GetUpdate(Update update)
         {
-            long chatId = update.Message.Chat.Id;
-            T? listener = listeners.GetValueOrDefault(chatId);
-
-            if (listener is null)
+            if (update.Message != null)
             {
-                listener = new T();
-                listeners.Add(chatId, listener);
-                await listener.GetUpdate(update);
-                return;
-            }
 
-            await listener.GetUpdate(update);
+                T? listener = listeners.GetValueOrDefault(update.Message.Chat.Id);
+
+                if (listener is null)
+                {
+                    listener = new T();
+                    listeners.Add(update.Message.Chat.Id, listener);
+                    await listener.GetUpdate(update);
+                    return;
+                }
+
+                await listener.GetUpdate(update);
+            }
         }
 
 

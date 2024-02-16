@@ -8,7 +8,7 @@ namespace YTGrab.Help
     {
 
         private List<ITelegramCommand> commands;
-        private ICommandListener commandListener;   
+        private ICommandListener? commandListener;   
 
         public CommandExecutor()
         {
@@ -19,7 +19,6 @@ namespace YTGrab.Help
                 new AudioCommand(this),
             };
         }
-
 
         public async Task GetUpdate(Update update)
         {
@@ -35,10 +34,9 @@ namespace YTGrab.Help
 
         private async Task ExecuteCommand(Update update) 
         {
-            Message msg = update.Message;
             foreach (var command in commands) 
             {
-                if (command.Name == msg.Text)
+                if (command.Name == update.Message?.Text)
                 {
                     await command.Execute(update);
                 }

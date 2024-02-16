@@ -34,8 +34,8 @@ namespace YTGrab.Commands
         public async Task GetUpdate(Update update)
         {
             Executor.StopListen();
-            var chatId = update.Message.Chat.Id;
-            string url = update.Message.Text;
+            var chatId = update.Message?.Chat.Id;
+            string url = update.Message?.Text;
             try
             {
                 VideoDownloader videoDownloader = new VideoDownloader();
